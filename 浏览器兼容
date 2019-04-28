@@ -1,0 +1,33 @@
+1.ECMAScript语法转换
+Babel: https://new.babeljs.io/
+
+2.浏览器API
+shim 和 polyfill
+https://www.html.cn/archives/8339
+2.1 shim
+一个shim是一个库,它将一个新的API引入到一个旧的环境中,而且仅靠旧环境中已有的手段实现
+2.2 polyfill
+Paul Irish发布过一个Polyfills的总结页面“HTML5 Cross Browser Polyfills”.
+
+Polyfill是一个js库，主要抚平不同浏览器之间对js实现的差异。
+比如，html5的storage(session,local), 不同浏览器，不同版本，有些支持，有些不支持。
+Polyfill（Polyfill有很多，在GitHub上https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills），帮你把这些差异化抹平，不支持的变得支持了（典型做法是在IE浏览器中增加 window.XMLHttpRequest ，内部实现使用 ActiveXObject。）
+2.1.1 使用
+直接引入项目，最简单就是CDN:
+<script src="//cdn.polyfill.io/v1/polyfill.min.js" async defer></script>
+
+  
+
+pollyfill是“一种JavaScript垫片(shim)，为老版本浏览器模拟了标 准API”
+shim 的概念要比 polyfill 更大一些，可以将 polyfill 理解为专门兼容浏览器 API 的 shim 。
+简单的说，如果浏览器X支持标准规定的功能，那么 polyfill 可以让浏览器 Y 的行为与浏览器 X 一样。
+
+相关说明
+es5-shim是一个shim(而不是polyfill)的例子,它在ECMAScript 3的引擎上实现了ECMAScript 5的新特性,而且在Node.js上和在浏览器上有完全相同的表现(译者注:因为它能在Node.js上使用,不光浏览器上,所以它不是polyfill).
+
+3.modernizr
+使用Modernizr进行特征检测实现跨浏览器兼容性，Modernizr 检测浏览器对 CSS3 或 HTML5 功能支持情况。
+https://www.cnblogs.com/leejersey/p/3620300.html
+
+关于modernizr 和 polyfill
+http://www.ituring.com.cn/article/766
